@@ -4,6 +4,7 @@ import requests # requests module
 import json # json module
 import random # random module
 from replit import db
+from keep_alive import keep_alive
 
 #bot_secret = os.environ['BOT_TOKEN'] # Get the bot secret from .env
 
@@ -105,5 +106,7 @@ async def on_message(message):
             await message.channel.send('Not responding to messages')
 
 my_secret = os.environ['BOT_TOKEN']
+
+keep_alive()
 #run bot
 client.run(my_secret)
